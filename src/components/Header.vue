@@ -1,0 +1,30 @@
+<script setup>
+
+</script>
+
+
+<template>
+	<header class="alt">
+		<img src="@/assets/BGA-logo.jpg" alt="" /> 
+		<!-- <span class="logo"><img src="@/assets/BGA-logo.jpg" alt="" /></span>    -->
+	</header>
+</template>
+
+
+
+<style lang="scss" scoped>
+	header {
+		padding: 5em 5em 1em 5em ;
+		text-align: center;
+
+		img {
+					margin: 0 auto;
+					max-width: 50%;
+		};
+	}
+
+	@media only screen and (min-width: 375px) {
+		
+	}
+
+</style>
