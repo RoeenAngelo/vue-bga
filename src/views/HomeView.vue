@@ -23,7 +23,7 @@ export default {
 <template>
   <main id="wrapper">
     <Header></Header>
-    <MobileNavbar class="nav-header" />
+    <MobileNavbar id="nav-header" />
     <!-- <Navbar /> -->
     <Leaderboard />
     
@@ -38,8 +38,6 @@ export default {
   width: 64em;
   max-width: calc(100% - 4em);
   margin: auto;
-  // background-color: white;
-  position: relative;
 }
 
 #nav-header {

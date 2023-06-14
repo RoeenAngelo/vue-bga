@@ -81,7 +81,6 @@ header {
   background-color: #f7f7f7;
   z-index: 99;
   width: 100%;
-  position: sticky;   
   transition: .5s ease all;
   border-radius: 8px 8px 0 0;
 
