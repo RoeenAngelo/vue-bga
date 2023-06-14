@@ -2,7 +2,6 @@
 
 </script>
 
-
 <template>
         <nav class="container">
             <ul class="nav-routes">
@@ -11,9 +10,12 @@
                 <RouterLink to="#">Results</RouterLink>
                 <RouterLink to="#">Gallery</RouterLink>
             </ul>
-            
-            <i class="fa-solid fa-bars"></i>
-
+            <button class="nav-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button class="nav-btn nav-close-btn">
+                <i class="fa-solid fa-x"></i>
+            </button>
         </nav>
 </template>
 
@@ -26,20 +28,15 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding: 25px 16px;
-        border-top-left-radius: 0.25em;
-		border-top-right-radius: 0.25em;
+        padding: 15px 10px;
+        // border-radius: .25em .25em 0 0;
+        border-radius: 10px 10px 0 0;
         background-color: #f1f1f1;
-        border-top-left-radius: 0.25em;
-        border-top-right-radius: 0.25em;
-
-        
+        margin-top: 0;
 
         ul {
             display: none;
 
-
-            
             a {
                 text-decoration: none;
                 color: inherit;
@@ -51,29 +48,24 @@
        
 
         i {
-                font-size: 2em;
+                font-size: 1.4em;
                 cursor: pointer;
             }
 
-        // background-color: #ffffff;
-		// color: #636363;
-		// position: absolute;
-		// background-color: #f7f7f7;
-		// border-top-left-radius: 0.25em;
-		// border-top-right-radius: 0.25em;
-		// cursor: default;
-		// text-align: center;
-		// margin: 0;
     }
 
     @media only screen and (min-width: 600px) {
-            ul {
-                display: flex;
+            
+        ul {
+                display: flex;    
                 justify-content: space-evenly;
                 list-style: none;
                 gap: 12px;
                 font-size: 1em;
                 width: 100%;
             }
+        i {
+            display: none;
+        }
     }
 </style>

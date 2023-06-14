@@ -23,8 +23,8 @@ export default {
 <template>
   <main id="wrapper">
     <Header></Header>
-    <!-- <MobileNavbar /> -->
-    <Navbar />
+    <MobileNavbar />
+    <!-- <Navbar /> -->
     <Leaderboard />
     
   </main>
@@ -38,7 +38,7 @@ export default {
   width: 64em;
   max-width: calc(100% - 4em);
   margin: auto;
-  background-color: white;
+  // background-color: white;
 }
 
 
