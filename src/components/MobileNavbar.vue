@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-  <header :class="{'scrolled-nav' : scrollPosition }">
+  <header :class="{'scrolled-nav' : scrolledNav }">
     <nav>
         <ul v-show="!mobile" class="navigation"> 
             <li><RouterLink class="link" to="#">Leaderboard</RouterLink></li>
@@ -83,6 +83,7 @@ header {
   width: 100%;
   position: sticky;   
   transition: .5s ease all;
+  border-radius: 8px 8px 0 0;
 
   nav {
     position: relative;
@@ -181,14 +182,14 @@ header {
   }
 }
 
-.scrolled-nav {
-  background-color: #000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+// .scrolled-nav {
+//   background-color: #000;
+//   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-  nav {
-    padding: 8px;
+//   nav {
+//     padding: 8px;
 
-  }
-}
+//   }
+// }
 
 </style>
