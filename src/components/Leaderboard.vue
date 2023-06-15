@@ -87,6 +87,7 @@
   h3 {
     padding: 50px;
     text-align: center;
+    font-size: 1.4em;
   }
 
 	.leaderboard-container {

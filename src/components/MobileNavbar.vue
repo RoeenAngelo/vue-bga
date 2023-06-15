@@ -46,13 +46,13 @@ export default {
 </script>
 
 <template>
-  <header :class="{'scrolled-nav' : scrolledNav }">
+  <header id="nav-header" :class="{'scrolled-nav' : scrolledNav }">
     <nav>
         <ul v-show="!mobile" class="navigation"> 
-            <li><RouterLink class="link" to="#">Leaderboard</RouterLink></li>
-            <li><RouterLink class="link" to="#">Schedule</RouterLink></li>
-            <li><RouterLink class="link" to="#">Results</RouterLink></li>
-            <li><RouterLink class="link" to="#">Gallery</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'home'}">Leaderboard</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'schedule'}">Schedule</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'results'}">Results</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'gallery'}">Gallery</RouterLink></li>
         </ul>
         <div class="icon">
             <i @click="toggleMobileNav" 
@@ -63,10 +63,10 @@ export default {
         </div>
         <Transition name="mobile-nav">
           <ul v-show="mobileNav" class="dropdown-nav"> 
-            <li><RouterLink class="link" to="#">Leaderboard</RouterLink></li>
-            <li><RouterLink class="link" to="#">Schedule</RouterLink></li>
-            <li><RouterLink class="link" to="#">Results</RouterLink></li>
-            <li><RouterLink class="link" to="#">Gallery</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'home'}">Leaderboard</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'schedule'}">Schedule</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'results'}">Results</RouterLink></li>
+            <li><RouterLink class="link" :to="{name:'gallery'}">Gallery</RouterLink></li>
           </ul>
         </Transition>
         

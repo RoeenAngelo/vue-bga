@@ -1,9 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Header from './components/Header.vue';
+import MobileNavbar from './components/MobileNavbar.vue';
 </script>
 
 <template>
-   <RouterView />
+    <div id="wrapper">
+      <Header />
+      <MobileNavbar />
+      <RouterView />
+    </div>
+   
 </template>
 
 <style scoped>
@@ -17,6 +24,18 @@ import { RouterLink, RouterView } from 'vue-router'
 
 }
 
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 64em;
+  max-width: calc(100% - 4em);
+  margin: auto;
+}
+
+#nav-header {
+  position: sticky;
+  top: 0;
+}
 
 
 
