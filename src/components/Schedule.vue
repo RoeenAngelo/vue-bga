@@ -21,19 +21,19 @@ const schedule = [
     {
         name: 'WSOG',
         location: 'Golf Course: TBD',
-        date: 'TBD',
+        date: 'June 25',
         time: 'TBD'
     },
     {
         name: 'LL OPEN',
         location: 'Golf Course Champions Course at Tukwet Canyon',
-        date: 'TBD',
+        date: 'July 23',
         time: 'TBD'
     },
     {
         name: 'KAYAMI CLASSIC',
         location: 'Golf Course Champions Course at Tukwet Canyon',
-        date: 'TBD',
+        date: 'August 20',
         time: 'TBD'
     },
 ]

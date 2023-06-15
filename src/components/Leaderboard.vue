@@ -65,6 +65,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+	  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+
   }
   
   table {

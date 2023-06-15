@@ -2,6 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue';
 import MobileNavbar from './components/MobileNavbar.vue';
+import Footer from './components/Footer.vue';
+
 </script>
 
 <template>
@@ -9,6 +11,7 @@ import MobileNavbar from './components/MobileNavbar.vue';
       <Header />
       <MobileNavbar />
       <RouterView />
+      <Footer />
     </div>
    
 </template>
