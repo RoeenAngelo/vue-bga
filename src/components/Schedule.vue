@@ -54,7 +54,7 @@ const schedule = [
                     <h3 class="event-title">{{ event.name }}</h3>
                     <div class="event-location">{{ event.location }}</div>
                     <div class="event-time">
-                    <img src="@/assets/time.png" alt="">{{ event.time }}</div>
+                    <img src="@/assets/images/time.png" alt="">{{ event.time }}</div>
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
 
 <template>
 	<header id="header-container">
-		<img src="@/assets/BGA-logo.jpg" alt="" /> 
+		<img src="@/assets/images/BGA-logo.jpg" alt="" /> 
 		<!-- <span class="logo"><img src="@/assets/BGA-logo.jpg" alt="" /></span>    -->
 	</header>
 </template>
