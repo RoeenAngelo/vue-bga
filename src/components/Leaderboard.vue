@@ -33,7 +33,7 @@
 <template>
     <div class="leaderboard">
       <h3>Leaderboard</h3>
-      <div class="leaderboard-container">
+      <div class="leaderboard-table">
         <table>
             <thead>
             <tr>
@@ -85,15 +85,16 @@
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+    table-layout: fixed;
   }
 
  
   th,
   td {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
-    font-size: .8em;
+    font-size: .45rem;
     
   }
 
@@ -107,10 +108,22 @@
     font-size: 1.4em;
   }
 
-	.leaderboard-container {
+	.leaderboard-table {
 		width: 90%;
     border-radius: 8px 8px 8px 8px;
-
 	}
+
+  @media (min-width: 700px) {
+    th,
+  td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: .8em;
+    
+  }
+  }
+
+  
   </style>
   

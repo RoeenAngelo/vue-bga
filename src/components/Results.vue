@@ -5,13 +5,14 @@ import { ref } from 'vue';
 import pnrWinners from "@/assets/images/pnr/pnr-winners.jpg"
 import mastersWinner from "@/assets/images/BGA-masters/BGA-winner-justiin.JPEG"
 import pejaWinners from "@/assets/images/peja/peja-winners.JPEG"
+import wsogWinner from "@/assets/wsog/IMG_5410.JPEG"
 
-const tournaments = ref([
+const tournaments = [
   { event: 'PnR', winner: 'Pat and Sam', img: pnrWinners},
   { event: 'Masters', winner: 'Justin', img: mastersWinner },
   { event: 'PEJA', winner: 'Lakers in 4', img: pejaWinners },
-  { event: 'WSOG', winner: 'Chris', img: "@/assets/images/pnr/pnr-winners.jpg" },
-])
+  { event: 'WSOG', winner: 'Chris', img: wsogWinner },
+]
 
 
 </script>
@@ -21,8 +22,8 @@ const tournaments = ref([
   <section class="results-container">
     <h3>Results</h3>
     <div v-for="(tournament, index) in tournaments" key="index" class="results">
-      <img :src="`${tournament.img}`"/>
-      <h4>{{ tournament.event }} Winner/s :</h4>
+      <img :src="tournament.img"/>
+      <h4>{{ tournament.event }} Winner/s</h4>
       <h5>{{ tournament.winner }}</h5>
     </div>			
   </section>
