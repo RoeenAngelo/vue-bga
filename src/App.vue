@@ -8,7 +8,7 @@ import Footer from './components/Footer.vue';
 
 <template>
     <div id="wrapper">
-      <Header />
+      <Header class="header"/>
       <MobileNavbar />
       <RouterView />
       <Footer />
@@ -38,6 +38,11 @@ import Footer from './components/Footer.vue';
 #nav-header {
   position: sticky;
   top: 0;
+}
+
+
+#header-container {
+  margin-bottom: 30px;
 }
 
 

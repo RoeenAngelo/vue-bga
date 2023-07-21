@@ -43,7 +43,7 @@
 
     > * {
         width: calc(50% - 2em);
-        margin-left: 2em;
+        // margin-left: 2em;
     }
 
     .copyright {
@@ -51,21 +51,24 @@
         margin: 2.5em 0 2em 0;
         font-size: 0.8em;
         text-align: center;
+        color: white;
     }
 }
 
-.icons, i {
+     i {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+        color: white;
+        font-size: 25px;
 	}
 
-		ul.icons li {
-			display: inline-block;
-			padding: 0 0.65em 0 0;
-		}
+		// ul.icons li {
+		// 	display: inline-block;
+		// 	padding: 0 0.65em 0 0;
+		// }
 
-			ul.icons li:last-child {
-				padding-right: 0 !important;
-			}
+			// ul.icons li:last-child {
+			// 	padding-right: 0 !important;
+			// }
 </style>

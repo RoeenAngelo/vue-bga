@@ -4,7 +4,7 @@
 
 
 <template>
-	<header class="alt">
+	<header id="header-container">
 		<img src="@/assets/BGA-logo.jpg" alt="" /> 
 		<!-- <span class="logo"><img src="@/assets/BGA-logo.jpg" alt="" /></span>    -->
 	</header>

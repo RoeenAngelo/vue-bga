@@ -9,3 +9,13 @@ const app = createApp(App)
 app.use(router)
 
 app.mount('#app')
+
+
+/*
+  Intl API formatting
+*/
+app.config.globalProperties.filters = {
+  formatScore(value) {
+    return value.toFixed(0)
+    }
+  }

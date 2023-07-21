@@ -5,9 +5,7 @@ import Schedule from '../components/Schedule.vue';
 </script>
 
 <template>
-    <div class="schedule">
         <Schedule />
-    </div>
 </template>
 
 

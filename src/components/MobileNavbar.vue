@@ -83,15 +83,15 @@ header {
   width: 100%;
   transition: .5s ease all;
   border-radius: 8px 8px 0 0;
-
+  
   nav {
-    position: relative;
     display: flex;
     flex-direction: row;
     padding: 12px 0;
     transition: .5s ease all;
     width: 100%;
     margin: 0 auto;
+    height: 70px;
     @media (min-width: 1140px) {
       max-width: 1140px;
     }
@@ -151,16 +151,19 @@ header {
     .dropdown-nav {
       display: flex;
       flex-direction: column;
-      position: fixed;
+      position: absolute;
       width: 100%;
-      max-width: 250px;
-      height: 40%;
-      background-color: #fff;
-      top: 0;
-      left: 0;
+      max-width: 400px;
+      height: 50%;
+      top: 70px;
+      left: -30px;
+      background-color: rgb(228, 181, 181);
+
 
       li {
         margin-left: 0;
+        background-color: rgb(228, 181, 181);
+
         .link {
           color: #000 ;
         }
@@ -172,12 +175,14 @@ header {
     }
     .mobile-nav-enter-from,
     .mobile-nav-leave-to {
-      transform: translateX(-250px);
+      transform: translateX(-400px);
     }
 
     .mobile-nav-enter-to {
       transform: translateX(0);
     }
+
+
   }
 }
 
