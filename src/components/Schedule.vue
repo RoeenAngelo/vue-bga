@@ -20,15 +20,15 @@ const schedule = [
     },
     {
         name: 'WSOG',
-        location: 'Golf Course: TBD',
+        location: 'Golf Course: Marshall Canyon',
         date: 'June 25',
-        time: 'TBD'
+        time: '1:10 PM'
     },
     {
         name: 'LL OPEN',
-        location: 'Golf Course: TBD',
+        location: 'Golf Course: Hidden Valley Golf Course',
         date: 'July 23',
-        time: 'TBD'
+        time: '1:40 PM'
     },
     {
         name: 'KAYAMI CLASSIC',
@@ -88,7 +88,6 @@ const schedule = [
     }
 
 }
-
 
 
 .event-container {

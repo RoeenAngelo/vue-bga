@@ -1,10 +1,13 @@
+<script setup>
+import Gallery from '../components/Gallery.vue';
+
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is the gallery page</h1>
-  </div>
+  <Gallery />
 </template>
 
-<style>
+<style >
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
