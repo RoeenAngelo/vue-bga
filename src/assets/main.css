@@ -1,3 +1,5 @@
+/* @import './base.css'; */
+
 body {
     background-color: black;
 }
@@ -8,5 +10,10 @@ body {
     padding: 0;
     box-sizing: border-box;
   
+  }
+
+  a, li {
+    list-style: none;
+    text-decoration: none;
   }
   

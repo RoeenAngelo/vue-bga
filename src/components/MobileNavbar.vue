@@ -77,6 +77,11 @@ export default {
 
 
 <style lang="scss" scoped>
+#nav-header {
+  position: sticky;
+  top: 0;
+}
+
 header {
   background-color: #f7f7f7;
   z-index: 99;

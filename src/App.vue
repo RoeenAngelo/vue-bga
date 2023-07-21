@@ -18,8 +18,10 @@ import Footer from './components/Footer.vue';
    
 </template>
 
-<style scoped>
+<style>
 @import url("https://use.fontawesome.com/releases/v5.9.0/css/all.css");
+@import 'bulma/css/bulma.min.css';
+
 
 * {
   font-family: "Rubik", sans-serif;
@@ -36,18 +38,6 @@ import Footer from './components/Footer.vue';
   max-width: calc(100% - 4em);
   margin: auto;
 }
-
-#nav-header {
-  position: sticky;
-  top: 0;
-}
-
-
-#header-container {
-  margin-bottom: 30px;
-}
-
-
 
 
 

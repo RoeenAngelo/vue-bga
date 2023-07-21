@@ -17,12 +17,15 @@
 		padding: 5em 5em 1em 5em ;
 		text-align: center;
 		background-color: black;
+		margin-bottom: 30px;
 
 		img {
 			margin: 0 auto;
 			max-width: 160px;
 		};
 	}
+
+	
 
 	@media only screen and (min-width: 500px) {
 		header {
