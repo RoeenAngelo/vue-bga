@@ -17,6 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app)
+export const db = getFirestore(app)
 
-export const dbGalleryRef = collection(db, 'gallery')
+export const dbImagesRef = collection(db, 'images')
+export const dbUsersRef = collection(db, 'users')

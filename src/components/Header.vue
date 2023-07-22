@@ -1,10 +1,13 @@
 <script setup>
+import SignIn from './SignIn.vue';
+
 
 </script>
 
 
 <template>
 	<header id="header-container">
+		<SignIn />
 		<img src="@/assets/images/BGA-logo.jpg" alt="" /> 
 		<!-- <span class="logo"><img src="@/assets/BGA-logo.jpg" alt="" /></span>    -->
 	</header>
@@ -14,7 +17,10 @@
 
 <style lang="scss" scoped>
 	header {
-		padding: 5em 5em 1em 5em ;
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
 		text-align: center;
 		background-color: black;
 		margin-bottom: 30px;

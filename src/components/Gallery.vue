@@ -1,27 +1,25 @@
 <script setup>
+import NewImage from './admin/NewImage.vue';
+import { storeToRefs } from 'pinia';
+import { onBeforeMount, ref } from 'vue';
+import { useStoreImages } from '../stores/storeImages';
 
+const storeImages = useStoreImages()
+const { allImages, message } = storeToRefs(storeImages)
+const { deletePizza } = storeImages
 
+const showMenu = ref(true)
+
+function handleResize() {
+    if (window.innerWidth <= 900) showMenu.value = false
+}
+
+onBeforeMount(handleResize)
 </script>
 <template>
   <section class="section-container">
     <h3>Gallery</h3>
-    <div class="upload">
-      <p>Upload a photo</p>
-      <div class="file has-name">
-      <label class="file-label">
-        <input class="file-input" type="file" name="resume">
-        <span class="file-cta">
-          <span class="file-icon">
-            <i class="fas fa-upload"></i>
-          </span>
-          <span class="file-label">
-            Choose a file…
-          </span>
-        </span>
-      </label>
-    </div>
-    </div>
-
+    <NewImage />
     <div class="images-container">
       <img src="src/assets/images/BGA-masters/BGA1.JPEG" alt="">
       <img src="src/assets/images/BGA-masters/BGA2.JPEG" alt="">
