@@ -3,13 +3,33 @@
 
 </script>
 <template>
-  <section class="results-container">
+  <section class="section-container">
     <h3>Gallery</h3>
-    <div v-for="(tournament, index) in tournaments" key="index" class="results">
-      <img :src="`${tournament.img}`"/>
-      <h4>{{ tournament.event }} Winner/s :</h4>
-      <h5>{{ tournament.winner }}</h5>
-    </div>			
+    <div class="upload">
+      <p>Upload a photo</p>
+      <div class="file has-name">
+      <label class="file-label">
+        <input class="file-input" type="file" name="resume">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            Choose a file…
+          </span>
+        </span>
+      </label>
+    </div>
+    </div>
+
+    <div class="images-container">
+      <img src="src/assets/images/BGA-masters/BGA1.JPEG" alt="">
+      <img src="src/assets/images/BGA-masters/BGA2.JPEG" alt="">
+      <img src="src/assets/images/BGA-masters/BGA3.JPEG" alt="">
+      <img src="src/assets/images/BGA-masters/BGA4.JPEG" alt="">
+      <img src="src/assets/images/BGA-masters/BGA5.JPEG" alt="">
+      <img src="src/assets/images/BGA-masters/BGA6.JPEG" alt="">
+    </div>
   </section>
 </template>
 
@@ -17,39 +37,33 @@
 
 <style lang="scss" scoped>
 
-img {
-  width: 80%;
-  border-radius: 5px;
-}
-
-.results-container {
-    
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 100px;
-
-    >h3 { 
-        padding: 50px;
-        text-align: center;
-        font-size: 1.4em;
-
-    }
-}
-
-.results {
+.images-container {
   display: flex;
-  flex-direction: column;;
-  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  h4, h5 {
-    padding: 10px;
+img {
+  width: 350px;
+  height: 250px;
+  padding: 5px;
+  object-fit: cover;
+  object-position: bottom;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .5;
+    transition: .5s;
+    width: 400px;
   }
+}
+
+.upload {
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 </style>

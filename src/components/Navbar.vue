@@ -74,8 +74,9 @@ import { onClickOutside } from '@vueuse/core'
 }
 
 .navbar {
-  border-radius: 5px 5px 0 0;
-  background-color: rgb(121, 210, 90) ;
+  border-radius: 8px 8px 0 0;
+  // background-color: rgb(121, 210, 90);
+	background-color: #f7f7f7;
 }
 
 .navbar-end {

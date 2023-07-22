@@ -19,12 +19,12 @@ const tournaments = [
 
 
 <template>
-  <section class="results-container">
+  <section class="section-container">
     <h3>Results</h3>
     <div v-for="(tournament, index) in tournaments" key="index" class="results">
       <img :src="tournament.img"/>
-      <h4>{{ tournament.event }} Winner/s</h4>
-      <h5>{{ tournament.winner }}</h5>
+      <p class="event">~ {{ tournament.event }} Champion/s ~</p>
+      <p class="winner">{{ tournament.winner }}</p>
     </div>			
   </section>
 </template>
@@ -38,39 +38,22 @@ img {
   border-radius: 5px;
 }
 
-.results-container {
-    
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 100px;
-
-    >h3 { 
-        padding: 50px;
-        text-align: center;
-        font-size: 1.4em;
-
-    }
+.event {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 1em;
 }
 
+.winner {
+  font-size: .8em;
+}
 .results {
   display: flex;
   flex-direction: column;;
   align-items: center;
   margin-bottom: 70px;
-
-  h4, h5 {
-    padding: 10px;
-  }
 }
 
-
-/* Add your CSS styles for the results section here. */
 
 
 </style>

@@ -40,8 +40,8 @@ const schedule = [
 </script>
 
 <template>
-    <section class="schedule-container">
-        <h3 class="title">Schedule</h3>
+    <section class="section-container">
+        <h3>Schedule</h3>
         <div v-for="event in schedule"  class="event-container">
             <div class="event">
                 <div class="event-left">
@@ -65,29 +65,6 @@ const schedule = [
 
 
 <style lang="scss" scoped>
-
-
-.schedule-container {
-    
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 100px;
-
-    
-    >h3 { 
-        padding: 50px;
-        text-align: center;
-        font-size: 1.4em;
-
-    }
-
-}
 
 
 .event-container {

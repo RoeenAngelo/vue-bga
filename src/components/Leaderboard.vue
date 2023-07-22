@@ -31,7 +31,7 @@
     const sortedLeaderboard = leaderboard.sort((a,b) => b.total - a.total)
 </script>
 <template>
-    <div class="leaderboard">
+    <section class="section-container">
       <h3>Leaderboard</h3>
       <div class="leaderboard-table">
         <table>
@@ -63,24 +63,13 @@
             </tbody>
         </table>
     	</div>
-    </div>
+    </section>
   </template>
 
   
   
-  <style scoped>
-  .leaderboard {
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 100px;
-  }
-  
+  <style lang="scss" scoped>
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -100,12 +89,6 @@
 
   th {
     background-color: #f2f2f2;
-  }
-
-  h3 {
-    padding: 50px;
-    text-align: center;
-    font-size: 1.4em;
   }
 
 	.leaderboard-table {
