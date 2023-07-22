@@ -32,8 +32,8 @@ import Footer from './components/Footer.vue';
 }
 
 #wrapper {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 64em;
   max-width: calc(100% - 4em);
   margin: auto;
