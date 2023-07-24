@@ -1,83 +1,121 @@
 <script setup>
 import { ref } from 'vue';
-import { getStorage } from 'firebase/firestore'
-import { dbImagesRef } from '@/firebase'
+import { getStorage, uploadBytesResumable, ref as storageReference, getDownloadURL } from 'firebase/storage'
 import { useStoreAuth } from '../../stores/storeAuth';
 import { storeToRefs } from 'pinia';
 
 const storeAuth = useStoreAuth()
 const { userData } = storeToRefs(storeAuth)
-const storage = getStorage()
-
-
 
 const message = ref('')
 const newImage = ref([])
 
+const uploadTask = ref(null)
+const paused = ref(false)
+const progress = ref(0)
+
+
 /*
   Upload New Image
 */
-  async function upload(e) {
-    try {
-      if(!userData.value) return
-      let file = e.target.files[0]
-      const storageRef = db.storage().ref('images/'+ file.name)
-      await storageRef.put(file)
-      message.value = `Image ${newImage.value.name} has been uploaded`
-    } 
-    catch (error) {
-      message.value = "There was an error uploading the image..."
-    }
+
+  function handleChange(e) {
+    const storage = getStorage()
+    const file = e.target.files[0]
+    const storageRef = storageReference(storage, 'images/'+ file.name)
+    uploadTask.value = uploadBytesResumable(storageRef, e.target.files[0])
+    uploadTask.value.on('state_changed', (snapshot) => {
+      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+      progress.value = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      message.value = 'Image Uploaded'
+      switch (snapshot.state) {
+        case 'paused':
+          console.log('Upload is paused');
+          break;
+        case 'running':
+          console.log('Upload is running');
+          break;
+          }
+        }, 
+        (error) => {
+          message.value = 'Upload Failed'
+        },
+        () => {
+          // Upload completed successfully, now we can get the download URL
+          getDownloadURL(uploadTask.value.snapshot.ref).then((downloadURL) => {
+            console.log('File available at', downloadURL);
+          });
+        }
+        
+        )
+  
+    paused.value = false
 
   }
 
+  function pause() {
+    if(paused.value == false) {
+      uploadTask.value.pause
+      paused.value = true
+    }
+    else {
+      uploadTask.value.resume 
+      paused.value = false
+    }
+    
+  }
 
 
 </script>
 
 <template>
-  <section class="admin_section">
-      <div class="file is-small">
-        <label class="file-label">
-          <input @change="upload" v-on="newImage" class="file-input" type="file" name="resume">
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              upload an image
-            </span>
-          </span>
-        </label>
-      </div>
-      <!-- <form
-      >
 
-        <div class="form_group">
-          <button
-            @click.prevent="add"
-          >
-            Add
-          </button>
-          <span>{{ message }}</span>
-        </div>
-      </form> -->
-  </section>
+  <div class="file is-small">
+    <label class="file-label">
+      <input @change="handleChange" class="file-input" type="file" name="resume">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          upload photo
+        </span>
+      </span>
+    </label>
+    <span class="message">{{ message }}</span>
+  </div>
+
+  <!-- <div>
+  <input type="file" @change="handleChange">
+  <button>
+    <i v-if="paused" class="fa-solid fa-pause"></i>
+    <i v-else class="fa-solid fa-play"></i>
+  </button>
+  </div> -->
+
+
 </template>
 
 
 
 <style lang="scss" scoped>
 
-.admin_section {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  max-width: 650px;
-}
+// .admin_section {
+//   display: flex;
+//   width: 100%;
+//   justify-content: flex-end;
+//   max-width: 650px;
+// }
 
 .file {
   font-size: .6em;
+  margin-bottom: 2rem;
+}
+
+.message {
+  margin-left: 1rem;
+  font-size: 1.1em;
+  color: rgb(104, 205, 104);
 }
 
 </style>
