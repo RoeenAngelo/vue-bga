@@ -17,10 +17,12 @@ const newImage = ref([])
 /*
   Upload New Image
 */
-  async function upload() {
+  async function upload(e) {
     try {
       if(!userData.value) return
-      await getStorage(dbImagesRef, newImage.value)
+      let file = e.target.files[0]
+      const storageRef = db.storage().ref('images/'+ file.name)
+      await storageRef.put(file)
       message.value = `Image ${newImage.value.name} has been uploaded`
     } 
     catch (error) {
@@ -37,7 +39,7 @@ const newImage = ref([])
   <section class="admin_section">
       <div class="file is-small">
         <label class="file-label">
-          <input v-on="newImage" class="file-input" type="file" name="resume">
+          <input @change="upload" v-on="newImage" class="file-input" type="file" name="resume">
           <span class="file-cta">
             <span class="file-icon">
               <i class="fas fa-upload"></i>
