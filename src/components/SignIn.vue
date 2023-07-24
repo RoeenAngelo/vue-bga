@@ -152,9 +152,9 @@ document.removeEventListener('keyup', handleKeyboard)
 
 .sign_in_btn {
     align-self: flex-end;
-    margin-right: 1rem;
     color: white;
     border: none;
+    font-size: .7em;
 
     &:hover {
       color: rgb(164, 132, 132);
@@ -163,7 +163,7 @@ document.removeEventListener('keyup', handleKeyboard)
 
 
 
-  button {
+button {
   background: none;
   border: 0.5px solid rgb(202, 202, 202);
   border-radius: 0.3rem;
@@ -171,10 +171,10 @@ document.removeEventListener('keyup', handleKeyboard)
   cursor: pointer;
 }
 
-form {
-  padding: 0 1rem;
-  border-radius: 0.3rem;
-}
+// form {
+//   padding: 0 1rem;
+//   border-radius: 0.3rem;
+// }
 
 .form_group {
   padding: 1rem 0;
@@ -191,6 +191,7 @@ label {
   flex: 1;
   padding-right: 5px;
   padding-left: 0;
+  text-align: left;
 }
 
 input, textarea {

@@ -10,7 +10,6 @@ import Footer from './components/Footer.vue';
 <template>
     <div id="wrapper">
       <Header class="header"/>
-      <!-- <MobileNavbar /> -->
       <Navbar />
       <RouterView />
       <Footer />
