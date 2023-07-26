@@ -15,7 +15,7 @@ export const useStoreImages = defineStore('storePhotos', () => {
     Fetch Images
   */
    
-    onMounted(async () => {
+   async function getImages() {
       try {
         const storageRefList = await listAll(storageRef(storage, 'images'));
         const urls = await Promise.all(
@@ -26,59 +26,11 @@ export const useStoreImages = defineStore('storePhotos', () => {
       } catch (error) {
         console.error('Error fetching images:', error);
       }
-    });
+    };
+
+    onMounted(getImages)
    
-   
-    // async function getImages() {
-    //   try {
-    //     message.value = "";
-    //     allImages.value = []
-    //     getDownloadURL(ref(storage, 'images/stars.jpg'))
-    //     .then((url) => {
-    //       // `url` is the download URL for 'images/stars.jpg'
-      
-    //       // This can be downloaded directly:
-    //       const xhr = new XMLHttpRequest();
-    //       xhr.responseType = 'blob';
-    //       xhr.onload = (event) => {
-    //         const blob = xhr.response;
-    //       };
-    //       xhr.open('GET', url);
-    //       xhr.send();
-      
-    //       // Or inserted into an <img> element
-    //       const img = document.getElementById('myimg');
-    //       img.setAttribute('src', url);
-    //     })
-    //   } catch (error) {
-    //     message.value =
-    //       "There was an error fetching images, please reload the page";
-    //   }
-    // }
-    // onMounted(getImages);
 
-
-
-    // async function getImages() {
-    //   try {
-    //     message.value = "";
-    //     onSnapshot(dbImagesRef,(docs) => {
-    //       allImages.value = []
-    //       docs.forEach((doc) => {
-    //           const image = {
-    //             id: doc.id,
-    //             ...doc.data(),
-    //           };
-    //           allImages.value.push(image);
-    //         });
-  
-    //     })
-    //   } catch (error) {
-    //     message.value =
-    //       "There was an error fetching images, please reload the page";
-    //   }
-    // }
-    // onMounted(getImages);
   /*
     Delete Pizza
   */

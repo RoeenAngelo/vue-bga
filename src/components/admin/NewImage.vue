@@ -11,23 +11,18 @@ const message = ref('')
 const newImage = ref([])
 
 const uploadTask = ref(null)
-const paused = ref(false)
-const progress = ref(0)
 
 
 /*
   Upload New Image
 */
-
-  function handleChange(e) {
+function handleChange(e) {
     const storage = getStorage()
     const file = e.target.files[0]
     const storageRef = storageReference(storage, 'images/'+ file.name)
     uploadTask.value = uploadBytesResumable(storageRef, e.target.files[0])
     uploadTask.value.on('state_changed', (snapshot) => {
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      progress.value = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      message.value = 'Image Uploaded'
       switch (snapshot.state) {
         case 'paused':
           console.log('Upload is paused');
@@ -43,27 +38,60 @@ const progress = ref(0)
         () => {
           // Upload completed successfully, now we can get the download URL
           getDownloadURL(uploadTask.value.snapshot.ref).then((downloadURL) => {
-            console.log('File available at', downloadURL);
+            message.value = 'Image Uploaded';
           });
         }
         
         )
   
-    paused.value = false
-
   }
 
-  function pause() {
-    if(paused.value == false) {
-      uploadTask.value.pause
-      paused.value = true
-    }
-    else {
-      uploadTask.value.resume 
-      paused.value = false
-    }
+
+  // function handleChange(e) {
+  //   const storage = getStorage()
+  //   const file = e.target.files[0]
+  //   const storageRef = storageReference(storage, 'images/'+ file.name)
+  //   uploadTask.value = uploadBytesResumable(storageRef, e.target.files[0])
+  //   uploadTask.value.on('state_changed', (snapshot) => {
+  //     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  //     progress.value = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //     message.value = 'Image Uploaded'
+  //     switch (snapshot.state) {
+  //       case 'paused':
+  //         console.log('Upload is paused');
+  //         break;
+  //       case 'running':
+  //         console.log('Upload is running');
+  //         break;
+  //         }
+  //       }, 
+  //       (error) => {
+  //         message.value = 'Upload Failed'
+  //       },
+  //       () => {
+  //         // Upload completed successfully, now we can get the download URL
+  //         getDownloadURL(uploadTask.value.snapshot.ref).then((downloadURL) => {
+  //           console.log('File available at', downloadURL);
+  //         });
+  //       }
+        
+  //       )
+  
+  //   paused.value = false
+
+  // }
+
+  // function pause() {
+  //   if(paused.value == false) {
+  //     uploadTask.value.pause
+  //     paused.value = true
+  //   }
+  //   else {
+  //     uploadTask.value.resume 
+  //     paused.value = false
+  //   }
     
-  }
+  // }
 
 
 </script>

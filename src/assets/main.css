@@ -1,5 +1,9 @@
 /* @import './base.css'; */
 
+html {
+  background-color: black;
+}
+
 body {
     background-color: black;
     margin: 0 auto;
