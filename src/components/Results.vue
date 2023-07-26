@@ -41,7 +41,6 @@ console.log(allImages)
 </template>
 
 
-
 <style lang="scss" scoped>
 
 img {

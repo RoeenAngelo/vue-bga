@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { getStorage, uploadBytesResumable, ref as storageReference, getDownloadURL } from 'firebase/storage'
+import { getStorage, uploadBytes, uploadBytesResumable, ref as storageReference, getDownloadURL } from 'firebase/storage'
 import { useStoreAuth } from '../../stores/storeAuth';
 import { storeToRefs } from 'pinia';
 
@@ -20,21 +20,30 @@ function handleChange(e) {
     const storage = getStorage()
     const file = e.target.files[0]
     const storageRef = storageReference(storage, 'images/'+ file.name)
-    uploadTask.value = uploadBytesResumable(storageRef, e.target.files[0])
-    uploadTask.value.on('state_changed', (snapshot) => {
+
+    try {
+      uploadBytes(storageRef, e.target.files[0]).then((snapshot) => {
+        message.value = 'Image Uploaded';
+      });
+    } catch (error) {
+      message.value = 'Image Upload Failed'
+    }
+
+    // uploadTask.value = uploadBytesResumable(storageRef, e.target.files[0])
+    // uploadTask.value.on('state_changed', (snapshot) => {
      
-        }, 
-        (error) => {
-          message.value = 'Upload Failed'
-        },
-        () => {
-          // Upload completed successfully, now we can get the download URL
-          getDownloadURL(uploadTask.value.snapshot.ref).then((downloadURL) => {
-            message.value = 'Image Uploaded';
-          });
-        }
+    //     }, 
+    //     (error) => {
+    //       message.value = 'Upload Failed'
+    //     },
+    //     () => {
+    //       // Upload completed successfully, now we can get the download URL
+    //       getDownloadURL(uploadTask.value.snapshot.ref).then((downloadURL) => {
+    //         message.value = 'Image Uploaded';
+    //       });
+    //     }
         
-        )
+    //     )
   
   }
 
