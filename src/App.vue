@@ -38,6 +38,10 @@ import Footer from './components/Footer.vue';
   margin: auto;
 }
 
+html {
+  background-color: black;
+}
+
 
 
 </style>

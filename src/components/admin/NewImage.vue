@@ -22,15 +22,7 @@ function handleChange(e) {
     const storageRef = storageReference(storage, 'images/'+ file.name)
     uploadTask.value = uploadBytesResumable(storageRef, e.target.files[0])
     uploadTask.value.on('state_changed', (snapshot) => {
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      switch (snapshot.state) {
-        case 'paused':
-          console.log('Upload is paused');
-          break;
-        case 'running':
-          console.log('Upload is running');
-          break;
-          }
+     
         }, 
         (error) => {
           message.value = 'Upload Failed'

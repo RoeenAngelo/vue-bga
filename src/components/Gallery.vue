@@ -11,30 +11,28 @@ const { deleteImage } = storeImages
 
 
 </script>
+
+
+
 <template>
   <section class="section-container">
     <h3>Gallery</h3>
     <NewImage class="upload" />
     <div
-      v-for="image in allImages"
-      :key="image"
       class="images-container"
     >
-        <img :src="image" alt="Firebase Image" />
-      <!-- <img src="src/assets/images/BGA-masters/BGA1.JPEG" alt="">
-      <img src="src/assets/images/BGA-masters/BGA2.JPEG" alt="">
-      <img src="src/assets/images/BGA-masters/BGA3.JPEG" alt="">
-      <img src="src/assets/images/BGA-masters/BGA4.JPEG" alt="">
-      <img src="src/assets/images/BGA-masters/BGA5.JPEG" alt="">
-      <img src="src/assets/images/BGA-masters/BGA6.JPEG" alt=""> -->
+    <img
+      v-for="image in allImages"
+      :key="image"
+      :src="image"
+      alt="Firebase Image"
+    />
     </div>
   </section>
 </template>
 
 
 <style lang="scss" scoped>
-
-
 
 .images-container {
   display: flex;
@@ -53,9 +51,10 @@ img {
 
   &:hover {
     cursor: pointer;
-    opacity: .5;
+    // opacity: .5;
     transition: .5s;
     width: 400px;
+    height: 350px;
   }
 }
 
