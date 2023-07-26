@@ -6,7 +6,6 @@ import { useStoreImages } from '../stores/storeImages';
 
 const storeImages = useStoreImages()
 const { allImages, message } = storeToRefs(storeImages)
-const { deleteImage } = storeImages
 
 
 
@@ -59,9 +58,8 @@ img {
 }
 
 .upload {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  align-self: center;
+  justify-content: center;
 }
 
 </style>

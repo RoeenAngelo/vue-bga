@@ -8,16 +8,15 @@ const storeAuth = useStoreAuth()
 const { userData } = storeToRefs(storeAuth)
 
 const message = ref('')
-const signInMessage =ref('')
+const signInMessage = ref('')
 
 watch(userData, () => {
     signInMessage.value = ''
   })
+
 /*
   Upload New Image
 */
-
-
 
 function handleChange(e) {
     const storage = getStorage()
@@ -29,8 +28,9 @@ function handleChange(e) {
         uploadBytes(storageRef, e.target.files[0]).then((snapshot) => {
         message.value = 'Image Uploaded';
       });
-      } else{
-        signInMessage.value = 'Please sign in to upload an image.'
+      } 
+      else{
+        signInMessage.value = 'Please sign in to upload an image'
       }
 
     } catch (error) {
@@ -38,9 +38,6 @@ function handleChange(e) {
     }
 
   }
-
-
-
 
 
 </script>
@@ -59,7 +56,7 @@ function handleChange(e) {
         </span>
       </span>
     </label>
-    <span class="message">{{ message }}</span>
+    <span class="message-success">{{ message }}</span>
     <span v-if="signInMessage" class="sign-in-message">{{ signInMessage }}</span>
   </div>
 
@@ -74,14 +71,17 @@ function handleChange(e) {
   margin-bottom: 2rem;
 }
 
-.message {
+
+.message-success {
   margin-left: 1rem;
   font-size: 1.1em;
-  color: rgb(104, 205, 104);
+  color: rgb(86, 237, 86);
+  background-color: none;
 }
 
 .sign-in-message {
   color: red;
+  align-self: center;
 }
 
 </style>
