@@ -132,11 +132,13 @@ document.removeEventListener('keyup', handleKeyboard)
   .sign-in-google {
     margin-top: 10px;
     width: 100%;
-    padding: 0;
     border: none;
 
     img {
-      height: 50px
+      height: 50px;
+      padding: 0;
+      margin: 0;
+      border-radius: 13px
     };
 
   }
