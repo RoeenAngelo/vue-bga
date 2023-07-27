@@ -5,7 +5,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 
 const storeAuth = useStoreAuth()
 const { errorMessage, showSignInModal, userData } = storeToRefs(storeAuth)
-const { signUp, logIn, logOut, toggleModal } = storeAuth
+const { signUp, signInWithGoogle, logIn, logOut, toggleModal } = storeAuth
 
 const formData = ref({
   email: '',
@@ -79,9 +79,11 @@ document.removeEventListener('keyup', handleKeyboard)
             type="password"
           >
         </div>
-        <button
+        <div class="sign-in-up-buttons-container">
+          <button
           @click.prevent="logIn(formData.email, formData.password)"
           type="button"
+          class="sign-in"
         >
           Sign in
         </button>
@@ -91,6 +93,11 @@ document.removeEventListener('keyup', handleKeyboard)
         >
           Sign up
         </button>
+        </div>
+
+        <div>
+          <button @click.prevent="signInWithGoogle" class="sign-in-google"><img src="src/assets/images/google-btn.png" alt=""></button>
+        </div>
       </form>
     </div>
   </div>
@@ -122,7 +129,21 @@ document.removeEventListener('keyup', handleKeyboard)
   padding: 1rem;
   color: rgb(76, 76, 76);
 
-  button:first-of-type {
+  .sign-in-google {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0;
+    border: none;
+
+    img {
+      height: 50px
+    };
+
+  }
+  .sign-in-up-buttons-container {
+    margin-top: 10px;
+  }
+  .sign-in {
     margin-right: 1rem;
     background-color: rgb(163, 204, 163);
   }
