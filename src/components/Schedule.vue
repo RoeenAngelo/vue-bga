@@ -113,8 +113,7 @@ const schedule = [
             }
         
             .event-location {
-                font-size: 1
-                +em;
+                font-size: 1em;
                 text-align: left;
             }
 

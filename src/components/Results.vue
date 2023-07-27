@@ -1,14 +1,5 @@
 
 <script setup>
-import { ref } from 'vue';
-
-import NewImage from './admin/NewImage.vue';
-import { storeToRefs } from 'pinia';
-import { useStoreImages } from '../stores/storeImages';
-
-const storeImages = useStoreImages()
-const { allImages, message } = storeToRefs(storeImages)
-const { deleteImage } = storeImages
 
 import pnrWinners from "@/assets/images/pnr/pnr-winners.jpg"
 import mastersWinner from "@/assets/images/BGA-masters/BGA-winner-justiin.JPEG"
@@ -24,7 +15,6 @@ const tournaments = [
   { event: 'LL Open', winner: 'Team Pi', img: llopenWinner },
 ]
 
-console.log(allImages)
 
 </script>
 

@@ -5,7 +5,7 @@ import { useStoreAuth } from '../../stores/storeAuth';
 import { storeToRefs } from 'pinia';
 
 const storeAuth = useStoreAuth()
-const { userData } = storeToRefs(storeAuth)
+const { userData, userIsAdmin } = storeToRefs(storeAuth)
 
 const message = ref('')
 const signInMessage = ref('')
@@ -24,12 +24,15 @@ function handleChange(e) {
     const storageRef = storageReference(storage, 'images/'+ file.name)
 
     try {
-      if(userData.value){
+      if(userData.value && userIsAdmin.value === true){
         uploadBytes(storageRef, e.target.files[0]).then((snapshot) => {
         message.value = 'Image Uploaded';
       });
       } 
-      else{
+      else if (userData.value && userIsAdmin.value === false) {
+        signInMessage.value = 'You must be an admin to upload an image'
+      }
+      else {
         signInMessage.value = 'Please sign in to upload an image'
       }
 
@@ -77,6 +80,7 @@ function handleChange(e) {
   font-size: 1.1em;
   color: rgb(86, 237, 86);
   background-color: none;
+  align-self: center;
 }
 
 .sign-in-message {
