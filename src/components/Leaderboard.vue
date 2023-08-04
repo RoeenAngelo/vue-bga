@@ -1,7 +1,7 @@
 
 <script setup>
 
-    function getBestFourScores(scoresArr) {
+    function getFourBestScores(scoresArr) {
       const best4Scores = scoresArr.sort((a,b) => b - a).slice(0,4)
       const best4ScoresTotal = best4Scores.reduce((p,c) => p + c, 0)
       return best4ScoresTotal
@@ -9,35 +9,34 @@
 
     
     const players =  [
-          { id: 1, name: 'Justin', scores: [87.5, 600, 51, 55, 105, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 2, name: 'Aaron',  scores: [500,66,  67.5, 43.056, 105, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 3, name: 'Daniel',  scores: [67.5, 66, 500, 43.056, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 4, name: 'Morris',  scores: [300, 66, 67.5, 43.056, 70, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 5, name: 'Niehmer',  scores: [162.5, 41.078, 245, 71.667, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 6, name: 'Dayza',  scores: [77.5, 230, 85, 167.5, 162.5, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 7, name: 'Des',  scores: [67.5, 230, 67.5, 115, 55, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 8, name: 'George',  scores: [162.5, 101.333, 85, 109.167, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 9, name: 'Aldrich',  scores: [43, 48.733, 245, 101.945, 80, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 10, name: 'Arvin',  scores: [87.5, 85, 85, 74.167, 162.5, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 11, name: 'Pat',  scores: [100, 101.333, 54, 83.611, 500, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 12, name: 'Sam',  scores: [77.5, 120, 45, 58, 90, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 13, name: 'Chris', scores: [58.5, 74.5, 100, 167.5, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 14, name: 'Ed',  scores: [51, 58, 122.5, 43.056, 75, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 15, name: 'Alan',  scores: [49, 54, 122.5, 43.056, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 16, name: 'Joe', scores: [110, 58, 48, 70.833, 85, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 17, name: 'Tim',  scores: [37.167, 85, 67.5, 91.111, 65, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 18, name: 'Kyle',  scores: [37.167, 101.333, 48, 43.056, 300, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 19, name: 'Jordan',  scores: [58.5, 61, 43, 43.056, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 20, name: 'Ezra',  scores: [37.167, 54, 67.5, 115, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 21, name: 'Galvin', scores: [47, 51, 57, 300, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 22, name: 'James',  scores: [45, 74.5, 35.5, 59, 57, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 23, name: 'Jason',  scores: [54, 46.467, 39, 43.056, 42.063, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 24, name: 'Ronald',  scores: [41, 41.078, 37, 43.056, 60, 0], get total() { return getBestFourScores(this.scores)} },
-          { id: 25, name: 'Ro', scores: [54, 44.2, 54, 53, 53, 0], get total() { return getBestFourScores(this.scores)} },
+          { id: 1, name: 'Justin', scores: [87.5, 600, 51, 55, 105, 5], get total() { return getFourBestScores(this.scores)} },
+          { id: 2, name: 'Aaron',  scores: [500,66,  67.5, 43.056, 105, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 3, name: 'Daniel',  scores: [67.5, 66, 500, 43.056, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 4, name: 'Morris',  scores: [300, 66, 67.5, 43.056, 70, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 5, name: 'Niehmer',  scores: [162.5, 41.078, 245, 71.667, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 6, name: 'Dayza',  scores: [77.5, 230, 85, 167.5, 162.5, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 7, name: 'Des',  scores: [67.5, 230, 67.5, 115, 55, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 8, name: 'George',  scores: [162.5, 101.333, 85, 109.167, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 9, name: 'Aldrich',  scores: [43, 48.733, 245, 101.945, 80, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 10, name: 'Arvin',  scores: [87.5, 85, 85, 74.167, 162.5, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 11, name: 'Pat',  scores: [100, 101.333, 54, 83.611, 500, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 12, name: 'Sam',  scores: [77.5, 120, 45, 58, 90, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 13, name: 'Chris', scores: [58.5, 74.5, 100, 167.5, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 14, name: 'Ed',  scores: [51, 58, 122.5, 43.056, 75, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 15, name: 'Alan',  scores: [49, 54, 122.5, 43.056, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 16, name: 'Joe', scores: [110, 58, 48, 70.833, 85, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 17, name: 'Tim',  scores: [37.167, 85, 67.5, 91.111, 65, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 18, name: 'Kyle',  scores: [37.167, 101.333, 48, 43.056, 300, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 19, name: 'Jordan',  scores: [58.5, 61, 43, 43.056, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 20, name: 'Ezra',  scores: [37.167, 54, 67.5, 115, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 21, name: 'Galvin', scores: [47, 51, 57, 300, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 22, name: 'James',  scores: [45, 74.5, 35.5, 59, 57, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 23, name: 'Jason',  scores: [54, 46.467, 39, 43.056, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 24, name: 'Ronald',  scores: [41, 41.078, 37, 43.056, 60, 0], get total() { return getFourBestScores(this.scores)} },
+          { id: 25, name: 'Ro', scores: [54, 44.2, 54, 53, 53, 0], get total() { return getFourBestScores(this.scores)} },
         ]
 
     const leaderboard = players.sort((a,b) => b.total - a.total)
-
 
 
     // const leaderboard =  [
@@ -118,14 +117,15 @@
     table-layout: fixed;
   }
 
+  tr {
+    text-align: center;
+  }
  
   th,
   td {
     padding: 10px;
-    text-align: center;
     border-bottom: 1px solid #ddd;
     font-size: .45rem;
-    vertical-align: middle;
     
   }
 
@@ -147,7 +147,6 @@
     th,
   td {
     padding: 15px;
-    text-align: center;
     border-bottom: 1px solid #ddd;
     font-size: .8em;
     

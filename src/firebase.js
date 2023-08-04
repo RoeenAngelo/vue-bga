@@ -6,6 +6,15 @@ import { getStorage } from 'firebase/storage'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "process.env.API_KEY",
+//   authDomain: "process.env.AUTH_DOMAIN",
+//   projectId: "process.env.PROJECT_ID",
+//   storageBucket: "process.env.STORAGE_BUCKET",
+//   messagingSenderId: "process.env.MESSAGING_SENDER_ID",
+//   appId: "process.env.APP_ID"
+// };
+
 const firebaseConfig = {
   apiKey: "AIzaSyDf-np4ljkBZM682_ViXAcNPnkFyLdKqYw",
   authDomain: "bgbg-golf.firebaseapp.com",
@@ -14,6 +23,7 @@ const firebaseConfig = {
   messagingSenderId: "662595275229",
   appId: "1:662595275229:web:03e67ee0cdd1dcbbe80e34"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

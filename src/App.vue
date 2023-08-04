@@ -5,6 +5,7 @@ import MobileNavbar from './components/MobileNavbar.vue';
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
 
+
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import Footer from './components/Footer.vue';
       <Navbar />
       <RouterView />
       <Footer />
+  
     </div>
    
 </template>

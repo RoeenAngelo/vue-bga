@@ -13,6 +13,9 @@ dist
 dist-ssr
 coverage
 *.local
+.env
+
+/firebase.js
 
 /cypress/videos/
 /cypress/screenshots/
