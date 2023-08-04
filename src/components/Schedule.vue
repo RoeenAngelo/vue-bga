@@ -8,7 +8,7 @@ const schedule = [
     },
     {
         name: 'BGA Masters',
-        location: 'Oak Quarry',
+        location: 'Oak Quarry Golf Club',
         date: 'April 16',
         time: '1:00 PM'
     },
@@ -20,19 +20,19 @@ const schedule = [
     },
     {
         name: 'WSOG',
-        location: 'Golf Course: Marshall Canyon',
+        location: 'Marshall Canyon Golf Course',
         date: 'June 25',
         time: '1:10 PM'
     },
     {
         name: 'LL OPEN',
-        location: 'Golf Course: Hidden Valley Golf Course',
+        location: 'Hidden Valley Golf Course',
         date: 'July 23',
         time: '1:40 PM'
     },
     {
         name: 'KAYAMI CLASSIC',
-        location: 'Golf Course: TBD',
+        location: 'Industry Hills Golf Course (Ike)',
         date: 'August 20',
         time: 'TBD'
     },
