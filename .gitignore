@@ -15,7 +15,7 @@ coverage
 *.local
 .env
 
-firebase.js/
+src/firebase.js/
 
 /cypress/videos/
 /cypress/screenshots/
