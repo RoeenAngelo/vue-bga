@@ -9,7 +9,7 @@
 
     
     const players =  [
-          { id: 1, name: 'Justin', scores: [87.5, 600, 51, 55, 105, 5], get total() { return getFourBestScores(this.scores)} },
+          { id: 1, name: 'Justin', scores: [87.5, 600, 51, 55, 105, 0], get total() { return getFourBestScores(this.scores)} },
           { id: 2, name: 'Aaron',  scores: [500,66,  67.5, 43.056, 105, 0], get total() { return getFourBestScores(this.scores)} },
           { id: 3, name: 'Daniel',  scores: [67.5, 66, 500, 43.056, 42.063, 0], get total() { return getFourBestScores(this.scores)} },
           { id: 4, name: 'Morris',  scores: [300, 66, 67.5, 43.056, 70, 0], get total() { return getFourBestScores(this.scores)} },
