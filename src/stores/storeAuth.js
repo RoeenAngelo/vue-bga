@@ -7,8 +7,8 @@ import { getAuth,
           GoogleAuthProvider,
           signInWithPopup } from "firebase/auth";
 import { ref } from 'vue';
-import { doc, getDoc, getDocs, query, setDoc, updateDoc, where } from 'firebase/firestore';
-import { db, dbUsersRef } from '../firebase';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 import { async, isAdmin } from '@firebase/util';
 
 
@@ -102,18 +102,7 @@ export const useStoreAuth = defineStore('storeAuth', () => {
         
       }
     }     
-
-
-    // async function signInWithGoogle() {
-    //   const provider = new GoogleAuthProvider()
-    //   try {
-    //     await signInWithPopup(getAuth(), provider)
-    //     errorMessage.value=''
-    //     toggleModal()
-    //   } catch (error) {
-        
-    //   }
-    // }     
+  
 
   /*
     Log Out
