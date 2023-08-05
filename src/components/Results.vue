@@ -5,7 +5,7 @@ import pnrWinners from "@/assets/images/pnr/pnr-winners.jpg"
 import mastersWinner from "@/assets/images/BGA-masters/BGA-winner-justiin.JPEG"
 import pejaWinners from "@/assets/images/peja/peja-winners.JPEG"
 import wsogWinner from "@/assets/images/wsog/IMG_5410.JPEG"
-import llopenWinner from "@/assets/images/LL/LL-winners.jpg"
+import llopenWinner from "@/assets/images/LL/LLwinners.JPG"
 
 const tournaments = [
   { event: 'PnR', winner: 'Pat and Sam', img: pnrWinners},
