@@ -3,6 +3,8 @@ import { useStoreAuth } from '@/stores/storeAuth.js'
 import { storeToRefs } from 'pinia';
 import { onMounted, onUnmounted, ref } from 'vue';
 
+import googleBtn from "@/assets/images/google-btn.png"
+
 const storeAuth = useStoreAuth()
 const { errorMessage, showSignInModal, userData } = storeToRefs(storeAuth)
 const { signUp, signInWithGoogle, logIn, logOut, toggleModal } = storeAuth
@@ -96,7 +98,12 @@ document.removeEventListener('keyup', handleKeyboard)
         </div>
 
         <div>
-          <button @click.prevent="signInWithGoogle" class="sign-in-google"><img src="src/assets/images/google-btn.png" alt=""></button>
+          <button
+            @click.prevent="signInWithGoogle"
+            class="sign-in-google"
+          >
+            <img :src="googleBtn" alt="">
+          </button>
         </div>
       </form>
     </div>
