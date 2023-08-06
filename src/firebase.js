@@ -6,14 +6,18 @@ import { getFirestore } from 'firebase/firestore'
 
 
 
+const API_KEY = import.meta.env.VITE_API_KEY
+
 const firebaseConfig = {
-  apiKey: "process.env.API_KEY",
+  apiKey: API_KEY,
   authDomain: "bgbg-golf.firebaseapp.com",
   projectId: "bgbg-golf",
   storageBucket: "bgbg-golf.appspot.com",
-  messagingSenderId: "process.env.MESSAGING_SENDER_ID",
-  appId: "process.env.APP_ID"
+  messagingSenderId: "662595275229",
+  appId: "1:662595275229:web:03e67ee0cdd1dcbbe80e34"
 };
+
+
 
 
 // Initialize Firebase
