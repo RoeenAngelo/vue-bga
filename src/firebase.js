@@ -6,10 +6,10 @@ import { getFirestore } from 'firebase/firestore'
 
 
 
-const API_KEY = import.meta.env.VITE_API_KEY
+const { VITE_API_KEY }= import.meta.env
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: VITE_API_KEY,
   authDomain: "bgbg-golf.firebaseapp.com",
   projectId: "bgbg-golf",
   storageBucket: "bgbg-golf.appspot.com",
