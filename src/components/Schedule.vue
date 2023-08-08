@@ -34,7 +34,7 @@ const schedule = [
         name: 'KAYAMI CLASSIC',
         location: 'Industry Hills Golf Course (Ike)',
         date: 'August 20',
-        time: 'TBD'
+        time: '11:30 AM'
     },
 ]
 </script>

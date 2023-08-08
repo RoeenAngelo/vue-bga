@@ -6,7 +6,7 @@ import { getFirestore } from 'firebase/firestore'
 
 
 
-const { VITE_API_KEY }= import.meta.env
+const { VITE_API_KEY } = import.meta.env
 
 const firebaseConfig = {
   apiKey: VITE_API_KEY,
